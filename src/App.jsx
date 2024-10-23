@@ -7,8 +7,6 @@ import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import Navbar from './pages/Navbar'
 function App() {
-  const [count, setCount] = useState(0)
-  
   return (
     <  >  
     
@@ -17,8 +15,7 @@ function App() {
     <Route path="/" element={<SignIn/>}></Route>
     <Route path="/signUp" element={<SignUp/>}></Route>
     <Route path="*"  
-
-element={
+     element={
   <div> <Navbar/>
   <Routes>
 <Route path="/Home" element={<Home/>}></Route>
