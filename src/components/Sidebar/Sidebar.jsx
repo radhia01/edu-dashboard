@@ -1,16 +1,16 @@
 import React from 'react';
-import AcccountToggle from './AcccountToggle';
 import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineUsergroupDelete, AiOutlineDropbox } from "react-icons/ai";
-import { GiGraduateCap, GiPodiumWinner } from "react-icons/gi";
+import { AiOutlineHome, AiOutlineUsergroupDelete, AiOutlineDropbox, } from "react-icons/ai";
+import {  GiPodiumWinner,GiTeacher } from "react-icons/gi";
+import { FaBookReader ,FaCalendarAlt} from "react-icons/fa";
 import { GrCertificate } from "react-icons/gr";
-import { FaCalendarAlt } from "react-icons/fa";
+
 
 function Sidebar({ minimize, setAuthenticated }) {
   const sidebarLinks = [
     {
       id: 1,
-      link: "/dashboard",
+      link: "/",
       name: "Dashboard",
       icon: <AiOutlineHome />,
     },
@@ -18,7 +18,7 @@ function Sidebar({ minimize, setAuthenticated }) {
       id: 2,
       link: "/professors",
       name: "Professors",
-      icon: <AiOutlineUsergroupDelete />,
+      icon: <GiTeacher />,
     },
     {
       id: 3,
@@ -28,9 +28,9 @@ function Sidebar({ minimize, setAuthenticated }) {
     },
     {
       id: 4,
-      link: "/courses",
-      name: "Courses",
-      icon: <GiGraduateCap />,
+      link: "/trainings",
+      name: "Trainings",
+      icon: <FaBookReader />,
     },
     {
       id: 5,
@@ -56,50 +56,50 @@ function Sidebar({ minimize, setAuthenticated }) {
     {
       id: 1,
       name: "Logout",
-      link: "/login",
+      link: "/signIn",
     },
   ];
 
   return (
     <div className={`fixed top-0 left-0 flex ${minimize ? "w-20" : "w-60"} flex-col bg-gray-600 overflow-y-auto h-full`}>
-      <div className="h-20 bg-red-800 flex justify-center items-center">
-        <span className='text-3xl'><AiOutlineDropbox /></span>
-        {!minimize && <h1 className='text-2xl font-bold ml-2'>TuniEduc</h1>}
-      </div>
-      <hr />
-      <div className="flex-1">
-        <ul className="py-4 list-none">
-          {sidebarLinks.map(link => {
-            return (
-              <li key={link.id} className="py-4">
-                <Link
-                  className={`text-sm  text-gray-200 hover:text-red-600   flex relative w-full uppercase py-4  justify-center font-bold transition-colors duration-200 $`}
-                  to={link.link}
-                >
-                  <span className="text-2xl absolute left-6">{link.icon}</span>
-                  {!minimize && <span className=' absolute  left-20'>{link.name}</span>}
-                </Link>
-              </li>
+        <div className="h-20 bg-red-800 flex justify-center items-center">
+            <span className='text-3xl'><AiOutlineDropbox /></span>
+            {!minimize && <h1 className='text-2xl font-bold ml-2'>TuniEduc</h1>}
+        </div>
+        <hr />
+        <div className="flex-1">
+            <ul className="py-4 list-none">
+              {sidebarLinks.map(link => {
+                return (
+                  <li key={link.id} className="py-4">
+                    <Link
+                    className={`text-sm  text-gray-200 hover:text-red-600   flex relative w-full uppercase py-4  justify-center font-bold transition-colors duration-200 $`}
+                    to={link.link}
+                  >
+                    <span className="text-2xl absolute left-6">{link.icon}</span>
+                      {!minimize && <span className=' absolute  left-20'>{link.name}</span>}
+                    </Link>
+                  </li>
             );
           })}
-        </ul>
-      </div>
-      <hr />
-      <div>
-        <ul className='p-3 font-medium text-center'>
-          {authLinks.map(link => {
-            return (
-              <li 
-                key={link.id} 
-                onClick={() => setAuthenticated(false)} 
-                className='text-gray-400 hover:text-red-600 cursor-pointer transition-colors duration-200'
-              >
-                <Link to={link.link}>{link.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+            </ul>
+        </div>
+        <hr />
+        <div>
+            <ul className='p-3 font-medium text-center'>
+              {authLinks.map(link => {
+                return (
+                    <li 
+                    key={link.id} 
+                    onClick={() => setAuthenticated(false)} 
+                    className='text-gray-400 hover:text-red-600 cursor-pointer transition-colors duration-200'
+                  >
+                      <Link to={link.link}>{link.name}</Link>
+                    </li>
+                          );
+                        })}
+            </ul>
+        </div>
     </div>
   );
 }

@@ -104,21 +104,21 @@ function TopStudents() {
   ]
   return (
     <div className="  min-h-screen  p-6  ">
-    <div className='flex flex-col w-full rounded shadow bg-white  '>
-         <div className=" flex py-3 px-4 relative "><h1 className='text-2xl text-red-800  font-bold '>Top Students </h1>
+      <div className='flex flex-col w-full rounded shadow bg-white  '>
+        <div className=" flex py-3 px-4 relative "><h1 className='text-2xl text-red-800  font-bold '>Top Students </h1>
           
-         </div>
+        </div>
         
-     </div>
+      </div>
       <div className="  py-5 px-2   grid grid-cols-4  gap-8">
-             {topStdents.map(student=>{
-              return <StudentCard key={student.id}   user={student}/>
+      {topStdents.map(student=>{
+        return <StudentCard key={student.id}   user={student}/>
 
 
             
              })}
       </div>
-  </div>
+    </div>
   )
 }
 

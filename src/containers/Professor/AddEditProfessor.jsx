@@ -43,105 +43,103 @@ function AddEditProfessor({userId,setuserId}) {
     ]
   return (
     <div  className='  relative py-7  px-6   min-h-screen  p-6   '>
-        
-        <div className=" shadow py-4  px-3  bg-white font-bold  flex  items-center justify-between text-red-800 ">
-            <h1>{userId? "Edit Professor":"Add New Professor"} </h1>
-            <div className='flex  gap-2'>
-                  <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/dashboard")}>Dashboard</button>
-                  <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/professors")}>Professors</button>
-            </div>
+      <div className=" shadow py-4  px-3  bg-white font-bold  flex  items-center justify-between text-red-800 ">
+        <h1>{userId? "Edit Professor":"Add New Professor"} </h1>
+        <div className='flex  gap-2'>
+          <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/")}>Dashboard</button>
+          <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/professors")}>Professors</button>
         </div>
-        <div className="  mt-4 border rounded-sm    w-full  h-auto   shadow  ">
-            <div className=" text-gray-900 flex  py-4  px-2 ">
+      </div>
+      <div className="  mt-4 border rounded-sm    w-full  h-auto   shadow  ">
+        <div className=" text-gray-900 flex  py-4  px-2 ">
            <h1>Basic info</h1>
         </div>
-
         <div>
-           <form className='grid grid-cols-2 gap-6 px-2  py-2 '>
-              <div >
-                <label className="block mb-2 text-sm font-medium text-gray-900 ">First name</label>
-                <input type="text"  value={userId?"Emma":null} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-              </div>
-              <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-900 ">Last name</label>
-                  <input type="text"  value={userId?"Parker":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-              </div>
-              <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                  <input type="email"  value={userId?"exmple@gmail.com":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-              </div>
-              <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-900 ">Mobile</label>
-                  <input type="text"  value={userId?"02020202":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 ">Gender</label>
-                <select id="countries"  value={userId?"female":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
-                        <option selected>Choose a Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+          <form className='grid grid-cols-2 gap-6 px-2  py-2 '>
+            <div >
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">First name</label>
+              <input type="text"  value={userId?"Emma":null} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Last name</label>
+                <input type="text"  value={userId?"Parker":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                <input type="email"  value={userId?"exmple@gmail.com":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Mobile</label>
+                <input type="text"  value={userId?"02020202":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Gender</label>
+              <select id="countries"  value={userId?"female":null}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
+                <option selected>Choose a Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
         
-                </select>
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 ">Adrdess</label>
-                <input type="text" value={userId?"Tunis":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">CIN</label>
-            <input type="text" value={userId?"0000000":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
-            <input type="password"  value={userId?"0101010":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Joining Date</label>
-            <input type="text"       
-            value={date.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
+              </select>
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Adrdess</label>
+              <input type="text" value={userId?"Tunis":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">CIN</label>
+              <input type="text" value={userId?"0000000":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
+              <input type="password"  value={userId?"0101010":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Joining Date</label>
+              <input type="text"       
+                value={date.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
       
         
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">BirthDate</label>
-            <input type="text"       
-            value={birthDate.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="John" required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Speciality</label>
-            <select id="specialities" className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">BirthDate</label>
+                <input type="text"       
+                value={birthDate.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="John" required />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Speciality</label>
+              <select id="specialities" className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
                     <option selected>Choose a Speciality</option>
                     {specialities.map(speciality=>(
                          <option key={speciality.id} value={speciality.id}>{speciality.name}</option>
                     ))}
                    
     
-            </select>
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Courses List</label>
-            <select id="courses" multiple className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
+              </select>
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">Courses List</label>
+              <select id="courses" multiple className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
                     <option selected>Choose one or multiple courses</option>
                     {coursesList.map(course=>(
                          <option key={course.id} value={course.id}>{course.name}</option>
                     ))}
                    
     
-            </select>
-        </div>
+              </select>
+            </div>
         
-        <div className="flex ">
-        <button className='bg-red-800 text-white py-2  px-3  mr-5'>Submit</button>
-        <button className='bg-red-800 text-white py-2  px-3 '>Cancel</button>
+            <div className="flex ">
+              <button className='bg-red-800 text-white py-2  px-3  mr-5'>Submit</button>
+              <button className='bg-red-800 text-white py-2  px-3 '>Cancel</button>
             
-        </div>
+            </div>
       
            
         
-     </form>
-  </div>
-</div>
-{isOpen && (
+           </form>
+          </div>
+        </div>
+          {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full relative">
             <button
@@ -154,7 +152,7 @@ function AddEditProfessor({userId,setuserId}) {
             <Calendar
               onChange={(date) => {
                 setDate(date);
-                closeModal(); // Ferme la modal après sélection
+                closeModal(); 
               }}
               value={date}
             />

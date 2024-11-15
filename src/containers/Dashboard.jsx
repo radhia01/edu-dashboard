@@ -7,7 +7,7 @@ import user1 from "../assets/usermen.png"
 import user2 from "../assets/userwomen.png"
 import Table from '../components/Table/Table';
 import user3 from "../assets/user3.avif"
-import CourseCard from '../components/Card/CourseCard';
+import TrainingCard from '../components/Card/TrainingCard';
 import image1 from "../assets/course1.jpg"
 import image2 from "../assets/course2.jpg"
 import image3 from "../assets/course3.jpg"
@@ -245,55 +245,55 @@ const Dashboard = () => {
   return (
     <div className="  w-full   min-h-screen    ">
       <h1 className='text-red-800 font-semibold'>Dashboard</h1>
-                <div className=" grid grid-cols-3  gap-4  mt-4">
-                  
-                {dashboardData.map(element=>{
-                  return <DataCard  key={element.id} data={element} />
-                 })}</div> 
-
-
-<div className="mt-4 py-4 grid grid-cols-4 gap-4 ">
-  <div className=" shadow rounded-sm   bg-white  col-span-2 flex  flex-col ">
-    <h1 className='text-gray-800   font-medium py-3 px-2'>Students' Evolution Through the Years </h1><BarChart width={500} height={250} data={data} margin={{top: 20, right: 20, bottom: 20, left: 20}} >
-  <XAxis dataKey="day" />
-  <YAxis />
-  <Tooltip />
-  <Bar dataKey="students" fill="red" />
-</BarChart></div>
-<div className="col-span-2  bg-white text-gray-700 flex flex-col shadow ">
- <h1 className='text-gray-800   font-medium py-3 px-2'>Total Students per Course</h1>
-<RadialBarChart 
-  width={500} 
-  height={250} 
-  innerRadius="10%" 
-  outerRadius="80%" 
-  data={data01} 
-  startAngle={180} 
-  endAngle={0}
->
-  <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='total' />
-  <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right"  color='black'/>
-  <Tooltip />
-</RadialBarChart></div>
-  </div>
-
-  <div className=" bg-white flex flex-col">
-    <h1 className='text-gray-900 py-4 px-2  font-medium'>Newly Added Students</h1>
- <Table usersList={usersList} item={""}/>
-  </div>
-
-<div className="shadow  mt-4   ">
-<h1 className='font-bold  py-4  px-2 text-gray-800 bg-white shadow '>Trending Courses</h1>
-<div className="grid grid-cols-4 mt-4 gap-3 ">
-{coursesList.map(course=>{
-    return (
-        <CourseCard key={course.id} data={course} />
-    )
-  })}
-</div>
-
-</div>
+      <div className=" grid grid-cols-3  gap-4  mt-4">
+        {dashboardData.map(element=>{
+          return <DataCard  key={element.id} data={element} />
+                 })}
+        </div>
+      <div className="mt-4 py-4 grid grid-cols-4 gap-4 ">
+        <div className=" shadow rounded-sm   bg-white  col-span-2 flex  flex-col ">
+            <h1 className='text-gray-800   font-medium py-3 px-2'>Students' Evolution Through the Years </h1><BarChart width={500} height={250} data={data} margin={{top: 20, right: 20, bottom: 20, left: 20}} >
+            <XAxis dataKey="day" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="students" fill="red" />
+            </BarChart>
+        </div>
+        <div className="col-span-2  bg-white text-gray-700 flex flex-col shadow ">
+            <h1 className='text-gray-800   font-medium py-3 px-2'>Total Students per Course</h1>
+                <RadialBarChart 
+                  width={500} 
+                  height={250} 
+                  innerRadius="10%" 
+                  outerRadius="80%" 
+                  data={data01} 
+                  startAngle={180} 
+                  endAngle={0}
+                >
+                  <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='total' />
+                  <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right"  color='black'/>
+                  <Tooltip />
+                </RadialBarChart>
+          </div>
       </div>
+
+      <div className=" bg-white flex flex-col">
+         <h1 className='text-gray-900 py-4 px-2  font-medium'>Newly Added Students</h1>
+          <Table usersList={usersList} item={""}/>
+      </div>
+
+      <div className="shadow  mt-4   ">
+          <h1 className='font-bold  py-4  px-2 text-gray-800 bg-white shadow '>Trending Courses</h1>
+          <div className="grid grid-cols-4 mt-4 gap-3 ">
+              {coursesList.map(course=>{
+             return (
+                <TrainingCard key={course.id} data={course} />
+                         )
+                                })}
+          </div>
+
+      </div>
+    </div>
   
     
   );

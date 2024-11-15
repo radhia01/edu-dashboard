@@ -222,85 +222,73 @@ function AddCertificate({ certifId}) {
   return (
     <div  className='  relative py-7  px-6   min-h-screen  p-6   '>
         
-        <div className=" shadow py-4  px-3  bg-white font-bold  flex  items-center justify-between text-red-800 ">
-            <h1>{certifId ? " Certificate Details " :"Add New Certificate"}</h1>
-            <div className='flex  gap-2'>
-              <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/")}>Dashboard</button>
-              <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/certificates")}>Certificates</button>
+      <div className=" shadow py-4  px-3  bg-white font-bold  flex  items-center justify-between text-red-800 ">
+        <h1>{certifId ? " Certificate Details " :"Add New Certificate"}</h1>
+        <div className='flex  gap-2'>
+           <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/")}>Dashboard</button>
+          <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/certificates")}>Certificates</button>
               
-              </div>
         </div>
-<div className="  mt-4 border rounded-sm    w-full  h-auto   bg-white  shadow  ">
-    <div className=" text-gray-900 flex  py-4  px-2 ">
+        </div>
+        <div className="  mt-4 border rounded-sm    w-full  h-auto   bg-white  shadow  ">
+            <div className=" text-gray-900 flex  py-4  px-2 ">
+            <h1>Certificate Details</h1>
+            </div>
 
-        <h1>Certificate Details</h1>
-    </div>
-
-  <div>
-     <form className='grid grid-cols-2 gap-6 px-2  py-2 '>
-     <div >
-            <label className="block mb-2 text-sm font-medium text-gray-900 "> Certificate Name </label>
-            <input type="text"  value={certifId?"Certificate":null} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
         <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Student </label>
-           <select value={certifId?2:null}  className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5">
-            <option>Choose a student</option>
-            {studentsList.map(student=>{
-                return <option key={student.id} value={student.id}>{student.FirstName}{student.LastName}</option>
-            })}
-           </select>
-        </div>
+          <form className='grid grid-cols-2 gap-6 px-2  py-2 '>
+            <div >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 "> Certificate Name </label>
+                  <input type="text"  value={certifId?"Certificate":null} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Student </label>
+                <select value={certifId?2:null}  className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5">
+                  <option>Choose a student</option>
+                  {studentsList.map(student=>{
+                      return <option key={student.id} value={student.id}>{student.FirstName}{student.LastName}</option>
+                      })}
+                </select>
+            </div>
         
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Certificate Number  </label>
+                <input type="text"  value={certifId?"000000 ":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Issued  On   </label>
+                <input type="text"       
+                value={date.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  
+                required />
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Course </label>
+                <select  value={certifId?2:null}className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5">
+                  <option>Choose a course</option>
+                  {coursesList.map(course=>{
+                      return <option key={course.id} value={course.id}>{course.name}</option>
+                  })}
+                </select>
+            </div>
+            <div>
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">Professor   </label>
+                <select id="professors"   value={certifId?2:null} className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
+                      
+                        {professorsList.map(professor=>(
+                            <option key={professor.id} value={professor.id}>{professor.FirstName}{professor.LastName}</option>
+                        ))}
+                      
         
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Certificate Number  </label>
-            <input type="text"  value={certifId?"000000 ":null}   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"   required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Issued  On   </label>
-            <input type="text"       
-            value={date.toLocaleDateString()}  onClick={openModal} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  
-             required />
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Course </label>
-           <select  value={certifId?2:null}className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5">
-            <option>Choose a course</option>
-            {coursesList.map(course=>{
-                return <option key={course.id} value={course.id}>{course.name}</option>
-            })}
-           </select>
-        </div>
-        <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 ">Professor   </label>
-            <select id="professors"   value={certifId?2:null} className="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5   ">
-                  
-                    {professorsList.map(professor=>(
-                         <option key={professor.id} value={professor.id}>{professor.FirstName}{professor.LastName}</option>
-                    ))}
-                   
-    
-            </select>
-        </div>
-       
-       
-      
-        
-       
-       
-        
-        <div className="flex ">
-        <button className='bg-red-800 text-sm text-white py-1 px-3  mr-5'>Update</button>
-        <button className='bg-red-800 text-sm text-white py-1  px-3 '>Cancel</button>
+                </select>
+            </div>
+            <div className="flex ">
+              <button className='bg-red-800 text-sm text-white py-1 px-3  mr-5'>Update</button>
+              <button className='bg-red-800 text-sm text-white py-1  px-3 '>Cancel</button>
             
+            </div> 
+          </form>
         </div>
-      
-           
-        
-     </form>
-  </div>
-</div>
+      </div>
 {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full relative">
@@ -314,7 +302,7 @@ function AddCertificate({ certifId}) {
             <Calendar
               onChange={(date) => {
                 setDate(date);
-                closeModal(); // Ferme la modal après sélection
+                closeModal(); 
               }}
               value={date}
             />
