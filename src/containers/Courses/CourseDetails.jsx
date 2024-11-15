@@ -10,7 +10,7 @@ function CourseDetails({course,setShowCourseDetails,setCourseId}) {
                 <div className=" shadow py-4  px-3  bg-white font-bold    flex  items-center justify-between text-red-800 ">
                         <h1>Course Details </h1>
                         <div className='flex  gap-2'>
-                            <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/")}>Dashboard</button>
+                            <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/dashboard")}>Dashboard</button>
                             <button className='bg-white focus:outline-none border-none' onClick={()=>setShowCourseDetails(false)}>Courses</button>
                 
                        </div>

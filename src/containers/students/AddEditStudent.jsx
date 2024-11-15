@@ -36,7 +36,7 @@ function AddEditStudent({userId,setuserId}) {
         <div className=" shadow py-4  px-3  bg-white font-bold  flex  items-center justify-between text-red-800 ">
             <h1>{userId? "Edit Student":"Add New Student"} </h1>
             <div className='flex  gap-2'>
-              <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/")}>Dashboard</button>
+              <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/dashboard")}>Dashboard</button>
               <button className='bg-white focus:outline-none border-none' onClick={()=>navigate("/Students")}>Students</button>
               
               </div>

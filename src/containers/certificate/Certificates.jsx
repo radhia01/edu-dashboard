@@ -1,8 +1,9 @@
 import React from 'react'
-import CertificateTable from '../components/Table/CertificateTable'
+import CertificateTable from '../../components/Table/CertificateTable'
 import { AiOutlinePlus } from "react-icons/ai";
-
-function Certificates() {
+import { useNavigate } from 'react-router-dom';
+function Certificates({setCertifId}) {
+    const navigate=useNavigate()
     const certificatesList=[
         {   id:1,
             student:"Ali Ben Youssef ",
@@ -54,9 +55,9 @@ function Certificates() {
     <div className='min-h-screen py-4  px-2  mx-auto  '>
      <div className=" flex p-4 relative bg-white shadow ">
                 <h1 className='text-2xl text-red-800  font-bold '>Certificates List </h1>
-                  <button className='bg-red-500 text-white  top-2 flex  font-medium absolute right-2 py-3 px-2 focus:outline-none border-none ' onClick={()=>{setCourseId(null),navigate("/add/course")}}> <AiOutlinePlus className='mt-1  mr-1 text-lg'/>Add new Certificate </button>
+                  <button className='bg-red-500 text-white  top-2 flex  font-medium absolute right-2 py-3 px-2 focus:outline-none border-none ' onClick={()=>{ setCertifId(null);navigate("/add/certificate")}}> <AiOutlinePlus className='mt-1  mr-1 text-lg'/>Add new Certificate </button>
               </div>
-              <div className="mt-4"><CertificateTable certificates={certificatesList}/></div>
+              <div className="mt-4"><CertificateTable certificates={certificatesList} setCertifId={setCertifId}/></div>
             </div>
   )
 }

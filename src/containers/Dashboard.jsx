@@ -254,14 +254,14 @@ const Dashboard = () => {
 
 <div className="mt-4 py-4 grid grid-cols-4 gap-4 ">
   <div className=" shadow rounded-sm   bg-white  col-span-2 flex  flex-col ">
-    <h1 className='text-gray-800   font-medium py-3 px-2'>Students progress with years </h1><BarChart width={500} height={250} data={data} margin={{top: 20, right: 20, bottom: 20, left: 20}} >
+    <h1 className='text-gray-800   font-medium py-3 px-2'>Students' Evolution Through the Years </h1><BarChart width={500} height={250} data={data} margin={{top: 20, right: 20, bottom: 20, left: 20}} >
   <XAxis dataKey="day" />
   <YAxis />
   <Tooltip />
   <Bar dataKey="students" fill="red" />
 </BarChart></div>
 <div className="col-span-2  bg-white text-gray-700 flex flex-col shadow ">
- <h1 className='text-gray-800   font-medium py-3 px-2'>Total students by  courses</h1>
+ <h1 className='text-gray-800   font-medium py-3 px-2'>Total Students per Course</h1>
 <RadialBarChart 
   width={500} 
   height={250} 
@@ -278,12 +278,12 @@ const Dashboard = () => {
   </div>
 
   <div className=" bg-white flex flex-col">
-    <h1 className='text-gray-900 py-4 px-2  font-medium'>Students added recently</h1>
+    <h1 className='text-gray-900 py-4 px-2  font-medium'>Newly Added Students</h1>
  <Table usersList={usersList} item={""}/>
   </div>
 
 <div className="shadow  mt-4   ">
-<h1 className='font-bold  py-4  px-2 text-gray-800 bg-white shadow '>Popular Courses</h1>
+<h1 className='font-bold  py-4  px-2 text-gray-800 bg-white shadow '>Trending Courses</h1>
 <div className="grid grid-cols-4 mt-4 gap-3 ">
 {coursesList.map(course=>{
     return (

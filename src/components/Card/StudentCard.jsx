@@ -2,7 +2,7 @@ import React from 'react'
 
 function StudentCard({user}) {
     return (
-        <div className={`w-full  rounded-sm shadow grid   grid-rows-7  m-2 py-2 px-2   ${user.top===1 ? "bg-red-100":"bg-white"} ` }>
+        <div className={`w-full  rounded-lg shadow grid   grid-rows-7  m-2 py-2 px-2 hover:scale-110   ${user.top===1 ? "bg-red-100":"bg-white"} ` }>
     <div className="row-span-3 flex flex-col justify-center items-center text-gray-800 p-1">
       <div className=" "> <img className='rounded-full  h-[100px] w-[100px] border' src={user.image}/></div>  
       <div className={` text-centermt-1 text-gray-800 ${user.top===1?"text-3xl":" text-xl "}`}>  <h1 >{user.FirstName} {user.LastName}</h1></div>
