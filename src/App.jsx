@@ -16,6 +16,7 @@ import CoursesList from './containers/Courses/CoursesList'
 import AddEditCourse from './containers/Courses/AddEditCourse'
 import CourseDetails from './containers/Courses/CourseDetails'
 import TopStudents from './containers/students/TopStudents'
+import Certificates from './containers/Certificates'
 function App() {
   const [userId, setuserId] = useState(null)
   const [courseId, setCourseId] = useState(null)
@@ -39,6 +40,7 @@ function App() {
           <Route path="/edit/course"  element={<AddEditCourse   courseId={courseId}/>} />
           <Route path="course/details"  element={<CourseDetails />} />
           <Route path="top/students"  element={<TopStudents />} />
+          <Route path="/certificates"  element={<Certificates />} />
          
         </Routes>
       </div>
